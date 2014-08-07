@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to image_tag("http://i.imgur.com/LuVbSGt.gif", size: "67x50"), root_path, class: "navbar-brand", style: "margin-left:-35px;padding-top:0px;" %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+      	<li style="margin-right:3px;"><button onclick="location.href='/show'" type="button" class="btn btn-gold navbar-btn glyphicon glyphicon-time"></button></li>
+      	<li style="margin-right:3px;"><button onclick="location.href='/2'" type="button" class="btn btn-white navbar-btn glyphicon glyphicon-th-large"></button></li>
+        <li><button onclick="location.href='/story'" type="button" class="btn btn-red navbar-btn glyphicon glyphicon-list-alt"></button></li>
+
+      <% if user_signed_in? %>
+
+        <li class="dropdown" style="top:10px;">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          	<img class="img-rounded" style="width:35px;height:35px;" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c44.44.552.552/s50x50/484015_2278357474733_1821449611_n.jpg?oh=7b36d18ea3c1acefff55a53ea16fddc7&oe=5459D053&__gda__=1413561839_6967f3e953f3a6868d2679622a89c573" /><span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            <li class="divider"></li>
+            <li><a href="#"><img class="img-circle" style="width:30px; height:30px; margin-bottom:5px; margin-right:10px;" src="http://i.imgur.com/Ftkg7yP.png" />Airbnb</a></li>
+          </ul>
+        </li>
+
+        <% else %>
+        <li><%= link_to "Login", new_user_session_path, style: "right:-8px;top:15px;" %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
