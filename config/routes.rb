@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'story' => 'pages#story'
   get 'show' => 'pages#show'
   get 'upload' => 'pages#upload'
+  get 'box' => 'pages#box'
+  get 'box2' => 'pages#box2'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

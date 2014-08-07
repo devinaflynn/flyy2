@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def index
-  	@last_video = client.video_by("TxCrqHODQdM")
+  	client = YouTubeIt::Client.new(username:ENV["YOUTUBE_LOGIN"], password:ENV["YOUTUBE_PASSWORD"], dev_key: ENV["YOUTUBE_API_KEY"])
+  	@videos = client.my_videos
   end
 
   def index2
@@ -11,6 +12,12 @@ class PagesController < ApplicationController
 
   def show
   end
+
+  def box
+  end
+  
+  def box2
+  end	
 
   def upload
     client = YouTubeIt::Client.new(username:ENV["YOUTUBE_LOGIN"], password:ENV["YOUTUBE_PASSWORD"], dev_key: ENV["YOUTUBE_API_KEY"])
