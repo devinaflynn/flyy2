@@ -1,29 +1,169 @@
-<h1>Listing apps</h1>
+ 
+<div class="container-fluid2">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Tagline</th>
-      <th>Website</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @apps.each do |app| %>
-      <tr>
-        <td><%= app.name %></td>
-        <td><%= app.tagline %></td>
-        <td><%= app.website %></td>
-        <td><%= link_to 'Show', app %></td>
-        <td><%= link_to 'Edit', edit_app_path(app) %></td>
-        <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+  <!-- Split button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default">Popular</button>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Most Viewed</a></li>
+    
+  </ul>
+</div>
+<!-- Split button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default">Day</button>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Week</a></li>
+    <li><a href="#">Month</a></li>
+    <li><a href="#">Year</a></li>
+    <li><a href="#">All Time</a></li>
+    
+  </ul>
+</div>
+<span class="btn btn-default btn-md"><i class="glyphicon glyphicon-time"></i> Newest</span>
+</div>
 
-<%= link_to 'New App', new_app_path %>
+
+<% @apps.each do |app| %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+
+
+      <div id="p-button3" class="btn-group-vertical" style="width:34px;">
+        <%= link_to "",  upvotes_path(app_id: app.id), remote: true, method: :post, title: "Upvote this App", 'data-id'=>app.id, 'data-type'=>'json',class: "btn btn-ups btn-sm btn-default glyphicon glyphicon-chevron-up pull-right" %>
+        <button class="btn btn-ups btn-sm btn-up pull-right btn<%= app.id %>" style="border-color:whitesmoke;padding-left:8px;">
+          <%= app.votes_for.size %>
+        </button>
+      </div>
+
+      <div class="panel">
+        <iframe width="100%" height="400" src="<%= app_youtube_embed_url(app) %>" frameborder="0" allowfullscreen></iframe>
+        <div class="panel-body pb-start">
+          <div class="p-startup">
+          <%= image_tag(app.logo.url, class: "img-circle", style: "width:30px; height:30px; margin-bottom:5px; margin-right:10px;" ) %>
+      
+          <strong>
+            <%= app.name %>
+          </strong>
+           <a class="btn btn-default2 pull-right" href="#success" data-toggle="modal"><h4><i class="fa fa-comment"></i></h4></a>
+    <!-- Modal -->
+    <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-success">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4><i class="glyphicon glyphicon-comment"></i> Comments</h4>
+                </div>
+                <div class="modal-body">
+                <div class="detailBox">
+    
+  
+    <div class="actionBox">
+        <ul class="commentList">
+            <li>
+                <div class="commenterImage">
+                  <img src="http://lorempixel.com/50/50/people/6" />
+                </div>
+                <div class="commentText">
+                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="commenterImage">
+                  <img src="http://lorempixel.com/50/50/people/7" />
+                </div>
+                <div class="commentText">
+                    <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="commenterImage">
+                  <img src="http://lorempixel.com/50/50/people/7" />
+                </div>
+                <div class="commentText">
+                    <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="commenterImage">
+                  <img src="http://lorempixel.com/50/50/people/7" />
+                </div>
+                <div class="commentText">
+                    <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="commenterImage">
+                  <img src="http://lorempixel.com/50/50/people/7" />
+                </div>
+                <div class="commentText">
+                    <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="commenterImage">
+                  <img src="http://lorempixel.com/50/50/people/9" />
+                </div>
+                <div class="commentText">
+                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Share comment..." />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    
+     <a class="btn btn-default2 pull-right" href="#success" data-toggle="modal"><h4><i class="fa fa-share-alt"></i></h4></a>
+    <!-- Modal -->
+    <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-success">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h1><i class="glyphicon glyphicon-thumbs-up"></i> Success Modal</h1>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

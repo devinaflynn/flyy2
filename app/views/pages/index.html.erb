@@ -1,16 +1,58 @@
-  <script>
-    jQuery(function ($) {
-        $("#logo").tooltip()
-    });
-</script>
+<div class="container-fluid2">
 
+<ul class="nav nav-pills">
+  <li class="active">
+  <li><a href="#">Trending</a></li>
+  <li><a href="#">Popular</a></li>
+  <li><a href="#">Newest</a></li>
+</ul>
 
-  <% @videos.videos.each do |video| %>
-    <%= video.title %><br />
-    <%= video.description %><br />
-    <%= video.view_count %><br />
-  <% end %>
+</div>
 
+  <div class="row">
+
+    <div class="col-md-6 col-md-offset-3">
+      <button id="p-button" class="btn btn-ups btn-sm btn-white pull-right glyphicon glyphicon-folder-open"></button>
+      <button id="p-button2" class="btn btn-ups btn-sm btn-white pull-right glyphicon glyphicon-share"></button>
+
+      <div id="p-button3" class="btn-group-vertical" style="width:34px;">
+        <button class="btn btn-ups btn-sm btn-white glyphicon glyphicon-chevron-up pull-right"></button>
+        <button class="btn btn-ups btn-sm btn-up pull-right" style="border-color:whitesmoke;padding-left:8px;">28</button>
+      </div>
+
+      <div class="panel">
+        <iframe width="100%" height="400" src="//www.youtube.com/embed/UxOdW-At3Zo?modestbranding=1;autohide=1&amp;showinfo=0&amp;controls=0;rel=0" frameborder="0" allowfullscreen></iframe>
+        <div class="panel-body pb-start">
+          <div class="p-startup">
+          <img id="logo" class="img-circle" rel="tooltip" data-placement="top" title="Travel the world in style." style="width:30px; height:30px; margin-bottom:5px; margin-right:10px;" src="http://i.imgur.com/Ftkg7yP.png" /><strong>AirBnb</strong>
+          <h4 style="margin-right:10px;" class="pull-right">499 views</h4> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+
+    <div class="col-md-6 col-md-offset-3">
+      <button id="p-button" class="btn btn-ups btn-sm btn-white pull-right glyphicon glyphicon-star"></button>
+      <button id="p-button2" class="btn btn-ups btn-sm btn-white pull-right glyphicon glyphicon-plus"></button>
+
+      <div id="p-button3" class="btn-group-vertical" style="width:34px;">
+        <button class="btn btn-ups btn-sm btn-white glyphicon glyphicon-chevron-up pull-right"></button>
+        <button class="btn btn-ups btn-sm btn-up pull-right" style="border-color:whitesmoke;padding-left:8px;">28</button>
+      </div>
+
+      <div class="panel">
+        <iframe width="100%" height="400" src="//www.youtube.com/embed/UxOdW-At3Zo?modestbranding=1;autohide=1&amp;showinfo=0&amp;controls=0;rel=0" frameborder="0" allowfullscreen></iframe>
+        <div class="panel-body pb-start">
+          <div class="p-startup">
+          <img id="logo" class="img-circle" rel="tooltip" data-placement="top" title="Travel the world in style." style="width:30px; height:30px; margin-bottom:5px; margin-right:10px;" src="http://i.imgur.com/Ftkg7yP.png" /><strong>AirBnb</strong>
+          <h4 style="margin-right:10px;" class="pull-right">499 views</h4> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row">
 
     <div class="col-md-6 col-md-offset-3">
@@ -33,5 +75,13 @@
       </div>
     </div>
   </div>
+
+
+
+  <% @videos.videos.each do |video| %>
+    <%= video.title %><br />
+    <%= video.description %><br />
+    <%= video.view_count %><br />
+  <% end %>
 
 

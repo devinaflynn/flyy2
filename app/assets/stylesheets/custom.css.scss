@@ -1,4 +1,4 @@
-$body-bg: #fcfcfc;
+$body-bg: #e8e8e8;
 $link-color: #666;
 $navbar-default-bg: #fff;
 $navbar-default-link-active-bg: #fff;
@@ -8,7 +8,7 @@ $btn-default-bg:#fcfcfc;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
 
 #p-button { position: absolute; right: -25px; top: 10px; }
 #p-button2 { position: absolute; right: -25px; top: 45px; }
@@ -23,10 +23,14 @@ $btn-default-bg:#fcfcfc;
     filter: alpha(opacity=0); /* For IE8 and earlier */
 }
 
+.navbar {
+  background: #fff !important;
+}
+
 
 .navbar-nav > li > a {
     padding-top:0px !important;
-    padding-bottom:0px !important;
+    padding-bottom:2px !important;
 }
 .well {
     margin-top:0px !important;
@@ -486,4 +490,105 @@ padding-left:90px;
 .timeline-body > p + p {
   margin-top: 5px;
 }
- 
+
+
+.nav-pills > li > a {
+ background-color: #E0E0E0;
+}
+
+ .container-fluid {
+margin-right: auto;
+margin-left: auto;
+padding-left: 30px;
+padding-right: 30px;
+}
+
+.container-fluid2 {
+margin-right: auto;
+margin-left: auto;
+padding-left: 40%;
+padding-right: 30px;
+padding-bottom: 20px;
+padding-top: 70px;
+}
+
+
+
+
+
+
+
+
+.detailBox {
+    width:500px;
+    border:none;
+    margin:20px;
+}
+.titleBox {
+    background-color:#fdfdfd;
+    padding:10px;
+}
+.titleBox label{
+  color:#444;
+  margin:0;
+  display:inline-block;
+}
+
+.commentBox {
+    padding:5px;
+    
+}
+.commentBox .form-group:first-child, .actionBox .form-group:first-child {
+    width:80%;
+}
+.commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2) {
+    width:18%;
+}
+.actionBox .form-group * {
+    width:100%;
+}
+.taskDescription {
+    margin-top:10px 0;
+}
+.commentList {
+    padding:0;
+    list-style:none;
+    max-height:200px;
+    overflow:auto;
+}
+.commentList li {
+    margin:0;
+    margin-top:10px;
+}
+.commentList li > div {
+    display:table-cell;
+}
+.commenterImage {
+    width:30px;
+    margin-right:5px;
+    height:100%;
+    float:left;
+}
+.commenterImage img {
+    width:100%;
+    border-radius:50%;
+}
+.commentText p {
+    margin:0;
+}
+.sub-text {
+    color:#aaa;
+    font-family:verdana;
+    font-size:11px;
+}
+.actionBox {
+    
+    padding:10px;
+}
+
+.container3 {
+      padding-top: 60px;
+}
+
+
+

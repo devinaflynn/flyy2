@@ -12,17 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
-//= require turbolinks
+//= require bootstrap
 //= require_tree .
 
 var player;
 
-var $ = function(id) { return document.getElementById(id); }
-var $$ = function(tagname) { return document.getElementsByTagName(tagname); }
-
  function onYouTubeIframeAPIReady() {
-     var videos = $$('iframe'), // the iframes elements
+     var videos = document.getElementsByTagName('iframe'), // the iframes elements
          players = [], // an array where we stock each videos youtube instances class
          playingID = null; // stock the current playing video
      for (var i = 0; i < videos.length; i++) // for each iframes

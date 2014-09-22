@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
 
-  resources :apps
+
+
+  resources :apps do
+    get 'youtube_callback' => 'apps#youtube_callback'
+    get "mobile", on: :collection
+    get "websites", on: :collection
+    get "products", on: :collection
+  end
+
+  resources :upvotes, only: [:create]
 
   devise_for :users
-  root 'pages#index'
+  root 'apps#index'
 
   get '2' => 'pages#index2'
   get 'story' => 'pages#story'

@@ -1,18 +1,42 @@
-<div class="row">
- <div class="col-md-3 col-md-offset-1">
-  <div class="panel panel-default">
-   <div class="panel-body">
-    <div class="row">
-     <div class="col-md-12">
-      <img src="http://images.chinatopix.com/data/images/full/6205/airbnb-new-logo.png?w=600" class="img-responsive" style="border-top-left-radius: 6px; border-top-right-radius: 6px;" />
-     </div>
-     <div class="col-md-12">
-      <h2>AirBnb</h2>
-      <h4>Travel the hip way. Find awesome places to stay, or make money having people rent your home
-     </div>
-    </div>
-   </div>
-  </div>
- </div> 
-</div>
+ <!--
+Referances 
+jQuery Cookie : https://github.com/carhartl/jquery-cookie
+Modal : http://getbootstrap.com/javascript/#modals
+-->
+<script src="http://frontend.reklamor.com/jquery.cookie/jquery.cookie.js"></script>
 
+<div class="container">
+  <div class="row">
+        <div class='modal fade' id='myModal'>
+            <div class='modal-dialog'>
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class='modal-title'>
+                          <strong>MODAL WITH JQUERY COOKIE</strong>
+                        </h4>
+                    </div>
+                    <!-- / modal-header -->
+                    <div class='modal-body'>
+                        <img class="img-responsive" src="http://placehold.it/600x350&text=MODAL" />
+                    </div>
+                    <!-- / modal-body -->
+                   <div class='modal-footer'>
+                       <div class="checkbox pull-right">
+                            <label>
+                              <input class='modal-check' name='modal-check' type="checkbox"> Don't Show
+                            </label>
+                        </div>
+                        <!--/ checkbox -->
+                  </div>
+                  <!--/ modal-footer -->
+                </div>
+                <!-- / modal-content -->
+          </div>
+          <!--/ modal-dialog -->
+        </div>
+        <!-- / modal -->
+  </div>
+    <!-- / row -->
+</div>
+<!-- / container -->

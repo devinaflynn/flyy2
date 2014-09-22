@@ -1,19 +1,67 @@
-<p id="notice"><%= notice %></p>
+<div class="container3">
+<div class="row">
+ <div class="col-md-3 col-md-offset-1">
+  <div class="panel panel-default">
+   <div class="panel-body">
+    <div class="row">
+     <div class="col-md-8 col-sm-4 col-xs-4">
+      <img src="http://images.chinatopix.com/data/images/full/6205/airbnb-new-logo.png?w=600" class="img-responsive" style="border-top-left-radius: 6px; border-top-right-radius: 6px;" />
+     </div>
+     <div class="col-md-6 col-sm-3">
+      <h3><%=@app.name%></h3>
+      <%=link_to @app.website%>
+      <%if user_signed_in? and current_user==@app.user%>
+      	<br/>
+      	<%=link_to "Edit",edit_app_path(@app)%>
+      <%end%>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="panel panel-default">
+   <div class="panel-body">
+    <div class="row">
+     <div class="col-md-12">
+      <p><%=@app.tagline%></p>
+     </div>
+    
+    </div>
+   </div>
+  </div>
+  <div class="panel panel-default">
+   <div class="panel-heading">
+       <h3 class="panel-title">Founders</h3>
+   </div>    
+   <div class="panel-body">
+     <img src="http://i.imgur.com/TFwKwId.png" class="img-rounded" style="width:50px; height:50px;" />
+     <img src="http://i.imgur.com/x3GGS4h.png" class="img-rounded" style="width:50px; height:50px;" />
+      <img src="http://i.imgur.com/GNOZAfp.png" class="img-rounded" style="width:50px; height:50px;" />
 
-<p>
-  <strong>Name:</strong>
-  <%= @app.name %>
-</p>
+   </div>
+  </div>
+   <div class="panel panel-default">
+   <div class="panel-heading">
+       <h3 class="panel-title">Links</h3>
+   </div>    
+   <div class="panel-body">
+     <img src="http://i.imgur.com/FDo5YAQ.png" class="img-rounded" style="width:40px; height:50px;" />
+     <img src="http://i.imgur.com/6TXP7rG.png" class="img-rounded" style="width:40px; height:50px;" />
+     <img src="http://i.imgur.com/XCFzKU8.png" class="img-rounded" style="width:40px; height:50px;" />
+     <img src="http://i.imgur.com/SHBdK12.png" class="img-rounded" style="width:40px; height:50px;" />
+     <img src="http://i.imgur.com/Q255YPn.png" class="img-rounded" style="width:40px; height:50px;" />
 
-<p>
-  <strong>Tagline:</strong>
-  <%= @app.tagline %>
-</p>
+    
+   </div>
+  </div>
+ </div>
 
-<p>
-  <strong>Website:</strong>
-  <%= @app.website %>
-</p>
-
-<%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>
+ <div class="col-md-6">
+ 
+     
+   <div class="panel-body">
+    <iframe width="100%" height="325" src="//www.youtube.com/embed/<%=@app.youtube_id%>?rel=0&modestbranding=1;autohide=1&amp;showinfo=0&amp;controls=0;rel=0" frameborder="0" allowfullscreen></iframe>
+   </div>
+  </div>
+ </div> 
+ 
+ 
