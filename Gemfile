@@ -34,12 +34,14 @@ gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'fog'
 
+
 group :development do
   gem 'sqlite3'
 end
 
 group :production do
   gem 'pg'
+  gem 'unicorn'
   gem 'rails_12factor'
 end
 
