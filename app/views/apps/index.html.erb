@@ -54,7 +54,7 @@
           <%= image_tag(app.logo.url, class: "img-circle", style: "width:30px; height:30px; margin-bottom:5px; margin-right:10px;" ) %>
       
           <strong>
-            <%= app.name %>
+            <%= link_to app.name, app %>
           </strong>
            <a class="btn btn-default2 pull-right" href="#success" data-toggle="modal"><h4><i class="fa fa-comment"></i></h4></a>
     <!-- Modal -->
