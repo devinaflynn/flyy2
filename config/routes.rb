@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     get "mobile", on: :collection
     get "websites", on: :collection
     get "products", on: :collection
+    get "viewed",   on: :collection
+    get "popular",  on: :collection
   end
 
   resources :upvotes, only: [:create]

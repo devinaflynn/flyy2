@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140910033506) do
+ActiveRecord::Schema.define(version: 20140929031642) do
 
   create_table "apps", force: true do |t|
     t.string   "name"
@@ -20,12 +20,15 @@ ActiveRecord::Schema.define(version: 20140910033506) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "youtube_id"
-    t.integer  "view_count",   default: 0
-    t.boolean  "is_processed", default: false
+    t.integer  "view_count",         default: 0
+    t.boolean  "is_processed",       default: false
     t.integer  "user_id"
     t.string   "logo"
     t.string   "category"
+    t.integer  "cached_votes_total", default: 0
   end
+
+  add_index "apps", ["cached_votes_total"], name: "index_apps_on_cached_votes_total"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

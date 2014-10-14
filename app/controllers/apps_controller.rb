@@ -8,6 +8,17 @@ class AppsController < ApplicationController
     @apps = App.order(created_at: :desc).all
   end
 
+  def viewed
+    @apps = App.all.by_view_count
+    render :index
+  end
+
+  def popular
+    @apps = App.all.by_vote_count
+    render :index
+  end
+
+
   def mobile
     @apps = App.mobile.all
     render :index

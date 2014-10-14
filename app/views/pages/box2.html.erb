@@ -1,42 +1,51 @@
- <!--
-Referances 
-jQuery Cookie : https://github.com/carhartl/jquery-cookie
-Modal : http://getbootstrap.com/javascript/#modals
--->
-<script src="http://frontend.reklamor.com/jquery.cookie/jquery.cookie.js"></script>
-
 <div class="container">
-  <div class="row">
-        <div class='modal fade' id='myModal'>
-            <div class='modal-dialog'>
-                <div class='modal-content'>
-                    <div class='modal-header'>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class='modal-title'>
-                          <strong>MODAL WITH JQUERY COOKIE</strong>
-                        </h4>
-                    </div>
-                    <!-- / modal-header -->
-                    <div class='modal-body'>
-                        <img class="img-responsive" src="http://placehold.it/600x350&text=MODAL" />
-                    </div>
-                    <!-- / modal-body -->
-                   <div class='modal-footer'>
-                       <div class="checkbox pull-right">
-                            <label>
-                              <input class='modal-check' name='modal-check' type="checkbox"> Don't Show
-                            </label>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-7">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+               
+
+                    <span class="glyphicon glyphicon-lock"></span> Login</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Email</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
                         </div>
-                        <!--/ checkbox -->
-                  </div>
-                  <!--/ modal-footer -->
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">
+                            Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"/>
+                                    Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group last">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                Sign in</button>
+                                 <button type="reset" class="btn btn-default btn-sm">
+                                Reset</button>
+                        </div>
+                    </div>
+                    </form>
                 </div>
-                <!-- / modal-content -->
-          </div>
-          <!--/ modal-dialog -->
+                <div class="panel-footer">
+                    Not Registred? <a href="http://www.jquery2dotnet.com">Register here</a></div>
+            </div>
         </div>
-        <!-- / modal -->
-  </div>
-    <!-- / row -->
+    </div>
 </div>
-<!-- / container -->
+

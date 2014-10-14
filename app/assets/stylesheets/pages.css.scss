@@ -1,4 +1,4 @@
-.btn-grey { 
+u.btn-grey { 
   color: #445494; 
   background-color: #EBEBEB; 
   border-color: #BABABA; 
@@ -140,9 +140,9 @@ fieldset[disabled] .btn-gold.active {
 
 
 .btn-red { 
-  color: #2d4b76; 
-  background-color: #e8e8e8; 
-  border-color: #e8e8e8; 
+  color: #fff; 
+  background-color: #125c60; 
+  border-color: #125c60; 
 } 
  
 .btn-red:hover, 
@@ -151,7 +151,7 @@ fieldset[disabled] .btn-gold.active {
 .btn-red.active, 
 .open .dropdown-toggle.btn-red { 
   color: #2d4b76; 
-  background-color: #fff; 
+  background-color: #e8e8e8; 
   border-color: #fff; 
 } 
  
@@ -187,9 +187,9 @@ fieldset[disabled] .btn-red.active {
 
 
 .btn-up { 
-  color: #1C0A0A; 
-  background-color: #FFFFFF; 
-  border-color: #FFFFFF; 
+  color: #000; 
+  background-color: #fff; 
+  border-color: #000; 
 } 
  
 .btn-up:hover, 
@@ -257,3 +257,5 @@ fieldset[disabled] .btn-up.active {
   .youtube embed:hover {
       border:solid 1px #FFF;
   }
+
+  
