@@ -44,9 +44,9 @@
           </a>
 
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><%= link_to "Home", apps_path %></li>
+            <li><%= link_to "Profile", show_path %></li>
+            <li><%= link_to "Settings", edit_user_registration_path %></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
             <li class="divider"></li>
             <li><a href="#"><img class="img-circle" style="width:30px; height:30px; margin-bottom:5px; margin-right:10px;" src="http://i.imgur.com/Ftkg7yP.png" />Airbnb</a></li>
