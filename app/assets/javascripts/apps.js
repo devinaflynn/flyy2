@@ -16,3 +16,6 @@ console.log($('a[data-remote="true"]').length);
 
 
 })
+
+
+
