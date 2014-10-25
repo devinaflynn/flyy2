@@ -1,6 +1,7 @@
 class AppsController < ApplicationController
   before_action :set_app, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_comment, only: [:index, :websites, :viewed, :popular, :mobile, :products ]
 
   # GET /apps
   # GET /apps.json
@@ -115,6 +116,10 @@ class AppsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def app_params
       params.require(:app).permit(:name, :tagline, :website,:logo,:category)
+    end
+
+    def set_comment
+      @comment = Comment.new
     end
 
    

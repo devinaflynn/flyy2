@@ -5,24 +5,22 @@
 
 
 <ul class="nav navbar-nav navbar-right">
-     
-
-      <div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Category <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li style="">
-          <%= link_to(" websites", websites_apps_path, class: "") %>
-        </li>
-    <li style="">
-          <%= link_to(" mobile", mobile_apps_path, class: "") %>
-        </li>
-    <li style="">
-          <%= link_to(" products", products_apps_path, class: "") %>
-        </li>
-  </ul>
-</div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      Category <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li style="">
+            <%= link_to(" websites", websites_apps_path, class: "") %>
+          </li>
+      <li style="">
+            <%= link_to(" mobile", mobile_apps_path, class: "") %>
+          </li>
+      <li style="">
+            <%= link_to(" products", products_apps_path, class: "") %>
+          </li>
+    </ul>
+  </div>
 
  <div class="btn-group">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -93,89 +91,36 @@
           <div class="pull-right">
            <h4><%= app.view_count %> plays</h4>
            </div>
-           <a class="btn btn-default2" href="#success" data-toggle="modal"><h4><i class="fa fa-comment"></i></h4></a>
+           <%= link_to '<h4><i class="fa fa-comment"></i></h4>'.html_safe, comments_get_comments_by_app_path(app_id: app.id), remote: true, class: 'btn btn-default2' %>
 
     <!-- Modal -->
     <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header modal-header-success">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4><i class="glyphicon glyphicon-comment"></i> Comments</h4>
-                </div>
-                <div class="modal-body">
-                <div class="detailBox">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header modal-header-success">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4><i class="glyphicon glyphicon-comment"></i> Comments</h4>
+          </div>
+          <div class="modal-body">
+          <div class="detailBox">
 
-    
-  
-    <div class="actionBox">
-        <ul class="commentList">
-            <li>
-                <div class="commenterImage">
-                  <img src="http://lorempixel.com/50/50/people/6" />
-                </div>
-                <div class="commentText">
-                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
+          <div class="actionBox">
+            <ul class="commentList">
+                 
+              <div id="comments_from_server">
+                
+              </div>
+                
+            </ul>
 
-                </div>
-            </li>
-            <li>
-                <div class="commenterImage">
-                  <img src="http://lorempixel.com/50/50/people/7" />
-                </div>
-                <div class="commentText">
-                    <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-                </div>
-            </li>
-            <li>
-                <div class="commenterImage">
-                  <img src="http://lorempixel.com/50/50/people/7" />
-                </div>
-                <div class="commentText">
-                    <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-                </div>
-            </li>
-            <li>
-                <div class="commenterImage">
-                  <img src="http://lorempixel.com/50/50/people/7" />
-                </div>
-                <div class="commentText">
-                    <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-                </div>
-            </li>
-            <li>
-                <div class="commenterImage">
-                  <img src="http://lorempixel.com/50/50/people/7" />
-                </div>
-                <div class="commentText">
-                    <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-                </div>
-            </li>
-            <li>
-                <div class="commenterImage">
-                  <img src="http://lorempixel.com/50/50/people/9" />
-                </div>
-                <div class="commentText">
-                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-                </div>
-            </li>
-        </ul>
-        <form class="form-inline" role="form">
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Share comment..." />
-            </div>
-            <div class="form-group">
-                <button class="btn btn-default">Add</button>
-            </div>
-        </form>
-    </div>
-</div>
-                </div>
+            <%=form_for(@comment, remote: true, layout: :inline, role: 'form') do |f| %>
+              <%= hidden_field_tag :app_id, value='', id: 'app_id' %>
+              <%= f.text_field :body %>
+              <%= f.submit 'Add' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                 </div>

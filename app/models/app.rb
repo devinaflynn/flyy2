@@ -1,9 +1,9 @@
 class App < ActiveRecord::Base
-
 	CATEGORIES = %w(Website Mobile Product)
 
 	mount_uploader :logo, LogoUploader
 
+	has_many :comments
 	belongs_to :user
 	acts_as_votable
 

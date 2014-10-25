@@ -16,7 +16,8 @@ class PagesController < ApplicationController
   def box
   end
   
-  def box2
+  def learning
+    @topics = Topic.order(:name).all
   end	
 
   def upload

@@ -1,0 +1,12 @@
+<div class="container3">
+  <%= render partial: '/shared/messages' %>
+  <%= bootstrap_form_for([:profile, @user]) do |f| %>
+<div class="panel-body">
+  <div class="form-group">
+    <%= f.text_field :name , class: "form-contol" %>
+    <%= f.text_area :description , class: "form-contol" %>
+   </div> 
+  <%= f.submit "Update", class: "btn btn-primary" %>
+  <% end %>
+  </div>
+</div>

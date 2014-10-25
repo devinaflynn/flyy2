@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
 
 
+  get 'topics/get_topic_description' => 'topics#get_topic_description'
+  resources :topics
+  get 'comments/get_comments_by_app' => 'comments#get_comments_by_app'
+  resources :comments
+
   resources :apps do
     get 'youtube_callback' => 'apps#youtube_callback'
     get "mobile", on: :collection
@@ -9,6 +14,10 @@ Rails.application.routes.draw do
     get "products", on: :collection
     get "viewed",   on: :collection
     get "popular",  on: :collection
+  end
+
+  namespace :profile do
+    resource :user, only: [:show, :edit, :update]
   end
 
   resources :upvotes, only: [:create]
@@ -21,12 +30,12 @@ Rails.application.routes.draw do
   get 'show' => 'pages#show'
   get 'upload' => 'pages#upload'
   get 'box' => 'pages#box'
-  get 'box2' => 'pages#box2'
+  get 'learning' => 'pages#learning'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of    resource :user, only: [:show]your site routed with "root"
   # root 'welcome#index'
 
   # Example of regular route:
