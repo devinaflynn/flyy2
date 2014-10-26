@@ -121,7 +121,7 @@
             <%=form_for(@comment, remote: true, layout: :inline, role: 'form') do |f| %>
               <%= hidden_field_tag :app_id, value='', id: 'app_id' %>
               <%= f.text_field :body %>
-              <%= f.submit 'Add' %>
+              <%= f.submit 'Add', class: "btn btn-primary" %>
             <% end %>
           </div>
         </div>
