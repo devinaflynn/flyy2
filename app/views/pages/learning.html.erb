@@ -3,6 +3,34 @@
 <div class="panel-body">
   <div class="container3" style="height: 600px;">
     <div class="row">
+
+
+  <div class="btn-group pull-right panel-body">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      Category <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li style="">
+            <%= link_to("Startups", websites_apps_path, class: "") %>
+          </li>
+     
+      <li style="">
+            <%= link_to(" People", products_apps_path, class: "") %>
+          </li>
+      <li style="">
+            <%= link_to(" Programming", products_apps_path, class: "") %>
+          </li> 
+       <li style="">
+            <%= link_to(" Incubators", products_apps_path, class: "") %>
+          </li> 
+        <li style="">
+            <%= link_to(" Angel Investors", products_apps_path, class: "") %>
+          </li>
+        <li style="">
+            <%= link_to(" Venture Firms", products_apps_path, class: "") %>
+          </li>                       
+    </ul>
+  </div>
  
       <h4>Flyy Learning</h4>
       <p>learn something in 10 seconds or less</p>    
