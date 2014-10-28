@@ -1,3 +1,5 @@
+
+
 <div class="panel-body">
   <div class="container3" style="height: 600px;">
     <div class="row">
@@ -10,7 +12,11 @@
           <!-- Success buttons messages -->
           <%= link_to topic.name, topics_get_topic_description_path(id: topic.id), remote: true, class: "btn btn-default btn-block" %>
         <% end %>
+         <button id="normal-btn-success" class="btn btn-primary btn-success btn-block">
+            Learn More
+        </button>
       </div>
+
 
       <div class="col-md-4" id="topic_message">
         <!-- Success messages -->           
