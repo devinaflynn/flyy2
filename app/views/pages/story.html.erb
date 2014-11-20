@@ -1,97 +1,130 @@
-    <div class="container3">
-    <div class="row">
-      <div class="[ col-sm-6 col-md-offset-4 col-md-4 ]">
-        <div class="[ info-card ]">
-          <img style="width: 100%" src="http://i.imgur.com/PatlMLc.png" />
-          <div class="[ info-card-details ] animate">
-            <div class="[ info-card-header ]">
-              <h1> Flyy Co-Founders </h1>
-              <h3> Evan Towey - Brennen White - Devin Flynn </h3>
-            </div>
-            <div class="[ info-card-detail ]">
-              <!-- Description -->
-              <p>The idea of creating something out of nothing has always generated a passion in my heart. This is what lead me to website development. I can literally create little worlds that hopefully thousands of people can see and even experience.</p>
-              <div class="social">
-                <a href="https://www.facebook.com/rem.mcintosh" class="[ social-icon facebook ] animate"><span class="fa fa-facebook"></span></a>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-                <a href="https://twitter.com/Mouse0270" class="[ social-icon twitter ] animate"><span class="fa fa-twitter"></span></a>
-
-                <a href="https://github.com/mouse0270" class="[ social-icon github ] animate"><span class="fa fa-github-alt"></span></a>
-
-                <a href="https://plus.google.com/u/0/115077481218689845626/posts" class="[ social-icon google-plus ] animate"><span class="fa fa-google-plus"></span></a>
-
-                <a href="www.linkedin.com/in/remcintosh/" class="[ social-icon linkedin ] animate"><span class="fa fa-linkedin"></span></a>
+    <div id="login-overlay" class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Welcome to Blueplate</h4>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                  <div class="col-xs-6">
+                      <div class="well">
+                          <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                              <div class="form-group">
+                                  <label for="username" class="control-label">Username</label>
+                                  <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div class="form-group">
+                                  <label for="password" class="control-label">Password</label>
+                                  <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" name="remember" id="remember"> Remember login
+                                  </label>
+                                  <p class="help-block">(if this is a private computer)</p>
+                              </div>
+                              <button type="submit" class="btn btn-success btn-block">Login</button>
+                             
+                          </form>
+                      </div>
+                  </div>
+                  <div class="col-xs-6">
+                     
+                       <img src="http://i.imgur.com/kj4H8a1.png" class="img-rounded" style="width:220px; height:180px;" />
+                      <h5> The new way to find the best dishes and restaurants around you. Get current location or search a city to get started.</h5>
+                          
+                      </ul>
+                      <p><a href="/new-customer/" class="btn btn-default btn-block">Sign Up</a></p>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
       </div>
+  </div>
 
-<div class="container" style="height: 1000px;">
-  <div class="row">
-   <div class="panel-body">
-  
-        <br />
-        <div class="col-md-8 col-md-offset-2">
-           <h4>FAQ</h4>
-            <!-- Success buttons messages -->
-          <button id="autoclosable-btn-success" class="btn btn-default btn-block">
-            How did you get into startups?
-         </button>
-        <button id="autoclosable-btn-danger" class="btn btn-default btn-block">
-            If you could invest in any 2 startups right now, who would they be and why?
-        </button>
-          <!-- Warning buttons messages -->
-            <button id="autoclosable-btn-warning" class="btn btn-default btn-block">
-          If you only had 100 to spend on marketing, how would you spend it?
-        </button>
-          <!-- Info buttons messages -->
-            <button id="autoclosable-btn-info" class="btn btn-default btn-block">
-          Tell us something interesting that will be around in the coming future.
-        </button>
-            
 
-      </div>
-      <div class="col-md-6 col-md-offset-3">
-                <!-- Success messages -->
-          <div class="alert alert-success alert-autocloseable-success">
-              I starting learning programming a little bit in highschool but had no idea the possibilities I would have today. I cant imagine myself doing anything other than startups.
-          </div>    
-        <div class="alert alert-danger alert-autocloseable-danger">
-             If I could invest in 2 startups right now it would probably be be Vurb and AirBnB because I feel like they are going in the right direction and they have a really good team.
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <div id="login-overlay" class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Welcome to Blueplate</h4>
           </div>
-          <!-- Info messages -->
-          <div class="alert alert-info alert-autocloseable-info">
-               Electronic headstones where you can see pictures and videos of the people lives.
-          </div>
-          
-                <!-- Warning messages -->
-            <div class="alert alert-warning alert-autocloseable-warning">
-              I might buy a football ticket and pay somebody to go streaking with my company logo painted to his chest. It would probably be on the news.
-          </div>
-            <div class="alert alert-warning alert-normal-warning" hidden="hidden">
-              <button type="button" class="close">×</button>
-                If I could invest in 2 startups right now it would probably be be Vurb and AirBnB because I feel like they both are going in the right direction and they have a really good team.
-                <!-- Danger messages -->
-          
-          <div class="alert alert-danger alert-normal-danger" hidden="hidden">
-              <button type="button" class="close">×</button>
-            I'm a normal danger message. To close use  the appropriate button.
-        </div>
-                <!-- Info messages -->
-          <div class="alert alert-info alert-autocloseable-info">
-             Electronic headstones where you can see pictures and videos of the people's lives.
-          </div>
-          <div class="alert alert-info alert-normal-info" hidden="hidden">
-              <button type="button" class="close">×</button>
-            I'm a normal info message. To close use  the appropriate button.
-        </div>
-            </div>
-        </div>
-</div>
- </div>
-
- </div>
-
-
+           <div class="modal-body">
         
+        
+        <h2><i class="fa fa-envelope"></i> Newsletter</h2>
+                
+                <p>Subscribe to our weekly Newsletter and stay tuned.</p>
+                
+                <form action="" method="post">
+                    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+      <input type="email" class="form-control" placeholder="your@email.com">
+    </div>
+                    <br />
+                    <button type="submit" value="sub" name="sub" class="btn btn-primary"><i class="fa fa-share"></i> Subscribe Now!</button>
+              </form>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+  <div class="row">
+    <!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg"  title="Share this content" data-toggle="modal" data-target="#myModal">
+  <i class="fa fa-share-alt"></i> Share
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-share-alt"></i> Share</h4>
+      </div>
+     <div class="modal-body">
+              <div class="row">
+                  <div class="col-xs-6">
+                      <div class="well">
+                          <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                              <div class="form-group">
+                                  <label for="username" class="control-label">Username</label>
+                                  <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div class="form-group">
+                                  <label for="password" class="control-label">Password</label>
+                                  <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" name="remember" id="remember"> Remember login
+                                  </label>
+                                  <p class="help-block">(if this is a private computer)</p>
+                              </div>
+                              <button type="submit" class="btn btn-success btn-block">Login</button>
+                             
+                          </form>
+                      </div>
+                  </div>
+
+  
