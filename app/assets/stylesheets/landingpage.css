@@ -10,7 +10,7 @@
 
     background-size: cover;
 
-    height: 500px;
+    height: 600px;
 
     margin: 0 auto;
 
@@ -183,6 +183,10 @@ body{margin:0px;}
   font-size: 12px;
   line-height: 1.428571429;
   border-radius: 15px;
+}
+
+.panel-default3 {
+  background-color: #000;
 }
 
 

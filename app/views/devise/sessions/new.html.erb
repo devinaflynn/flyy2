@@ -1,10 +1,10 @@
-<div class="container3">
+<div class="container4">
 
 <div class="row" style="margin-top:20px">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <fieldset>
-        <h2>Sign In</h2>
+        <h2>Login <%= link_to "Sign Up", new_user_registration_path, style: "right:-8px;top:15px;", class: "btn btn-danger pull-right" %></li></h2>
         <hr class="colorgraph">
         <div class="form-group">
           <%= f.email_field :email, autofocus: true, id: "email", placeholder: "Email Address", class: "form-control input-lg" %>
@@ -24,7 +24,7 @@
         <hr class="colorgraph">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
-            <%= f.submit "Lets go", class: "btn btn-red btn-block btn-lg" %>
+            <%= f.submit "Next Step", class: "btn btn-primary btn-block btn-lg" %>
           </div>
         </div>
       </fieldset>
