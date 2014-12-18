@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get 'upload' => 'pages#upload'
   get 'box' => 'pages#box'
   get 'learning' => 'pages#learning'
+  get 'startup_blog' => 'pages#startup_blog'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

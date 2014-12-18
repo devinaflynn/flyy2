@@ -10,7 +10,7 @@
 
     background-size: cover;
 
-    height: 700px;
+    height: 600px;
 
     margin: 0 auto;
 
@@ -22,6 +22,29 @@
 
 }
 
+.ha-bg-parallax2 {
+
+    background: url(http://i.imgur.com/RDhynf3.png) 100% -195px no-repeat fixed;
+
+    -moz-background-size: cover;
+
+    -o-background-size: cover;
+
+    -webkit-background-size: cover;
+
+    background-size: cover;
+
+    height: 100px;
+
+    margin: 0 auto;
+
+    width: 100%;
+
+    display: table;
+
+    vertical-align: middle;
+
+}
 
 
 .ha-bg-parallax .ha-parallax-body {

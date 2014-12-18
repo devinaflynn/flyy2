@@ -15,6 +15,9 @@ class PagesController < ApplicationController
 
   def box
   end
+
+  def startup_blog
+  end
   
   def learning
     @topics = Topic.order(:name).all
