@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :upvotes, only: [:create]
 
   devise_for :users
-  root 'pages#index2'
+  root 'pages#box'
 
   get '2' => 'pages#index2'
   get 'story' => 'pages#story'
