@@ -60,3 +60,5 @@ gem 'bootstrap_form'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'byebug', group: [:development, :test]
+

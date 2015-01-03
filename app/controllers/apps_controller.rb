@@ -39,6 +39,7 @@ class AppsController < ApplicationController
   # GET /apps/1.json
   def show
     @app = App.find(params[:id])
+    byebug
   end
 
   # GET /apps/new
@@ -48,6 +49,7 @@ class AppsController < ApplicationController
 
   # GET /apps/1/edit
   def edit
+
     client = YouTubeIt::Client.new(username:ENV["YOUTUBE_LOGIN"], password:ENV["YOUTUBE_PASSWORD"], dev_key: ENV["YOUTUBE_API_KEY"])
     @upload_info = client.upload_token({title:@app.name, description:@app.tagline, category: "Tech", keywords:["flyy",@app.name]}, app_youtube_callback_url(:app_id=>@app.id))
   end
