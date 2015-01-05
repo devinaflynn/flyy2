@@ -36,7 +36,7 @@
 
       <% if user_signed_in? %>
 
-      <%= link_to "log out", destroy_user_session_path, method: :delete, class: "btn btn-dark" %>
+      
 
 
 
@@ -58,8 +58,8 @@
         <% else %>
 
         
-        <li><%= link_to "sign up", new_user_registration_path, class: "btn btn-default", style: "right:-8px;top:15px;" %></li>
-        <li><%= link_to "login", new_user_session_path, class: "btn btn-default", style: "right:-8px;top:15px;" %></li>
+        <li><%= link_to "sign up", new_user_registration_path, class: "btn btn-dark", style: "right:-8px;top:15px;" %></li>
+        <li><%= link_to "login", new_user_session_path, class: "btn btn-light", style: "right:-8px;top:15px;" %></li>
     
 
         <% end %>
