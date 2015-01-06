@@ -2,7 +2,7 @@
 <div class="col-md-12">
 <div class="container4">
 <div class="row">
-  <div class="panel panel-default2">
+  <div class="panel panel-default3">
    <div class="panel-body">
     <%= link_to "Back", :back, class: "btn btn-default" %>
     <div class="row">
@@ -33,67 +33,48 @@
         <div class="col-md-8 col-md-offset-2">
         <%= link_to("Answer Questions", edit_profile_user_path, class: "btn btn-default pull-right", style: " margin-right: 10px;") %>
          <h4>Bio Questions</h4>
-            <!-- Success buttons messages -->
-          <button id="autoclosable-btn-success" class="btn btn-default btn-block">
-            How did you get into startups?
-         </button>
-        <button id="autoclosable-btn-danger" class="btn btn-default btn-block">
-            If you could invest in any 2 startups right now, who would they be and why?
-        </button>
-          <!-- Warning buttons messages -->
-            <button id="autoclosable-btn-warning" class="btn btn-default btn-block">
-          If you only had 100 to spend on marketing, how would you spend it?
-        </button>
-          <!-- Info buttons messages -->
-            <button id="autoclosable-btn-info" class="btn btn-default btn-block">
-          Tell us something interesting that will be around in the coming future.
-        </button>
-            
 
-      </div>
-      <div class="col-md-8 col-md-offset-2">
-                <!-- Success messages -->
-          <div class="alert alert-success alert-autocloseable-success">
-              <!--This is a comment. Comments are not displayed in the browser
-              I starting learning programming a little bit in highschool but had no idea the possibilities I would have today. I cant imagine myself doing anything other than startups.-->
-          </div>    
-        <div class="alert alert-danger alert-autocloseable-danger">
-             <!--If I could invest in 2 startups right now it would probably be be Vurb and AirBnB because I feel like they are going in the right direction and they have a really good team.-->
-          </div>
-          <!-- Info messages -->
-          <div class="alert alert-info alert-autocloseable-info">
-          <!--
-               Electronic headstones where you can see pictures and videos of the people lives.-->
-          </div>
-          
-                <!-- Warning messages -->
-            <div class="alert alert-warning alert-autocloseable-warning">
-            <!--
-              I might buy a football ticket and pay somebody to go streaking with my company logo painted to his chest. It would probably be on the news.-->
-          </div>
-            <div class="alert alert-warning alert-normal-warning" hidden="hidden">
-              <button type="button" class="close">×</button>
-              <!--
-                If I could invest in 2 startups right now it would probably be be Vurb and AirBnB because I feel like they both are going in the right direction and they have a really good team.-->
-                <!-- Danger messages -->
-          
-          <div class="alert alert-danger alert-normal-danger" hidden="hidden">
-              <button type="button" class="close">×</button>
-            I'm a normal danger message. To close use  the appropriate button.
-        </div>
-                <!-- Info messages -->
-          <div class="alert alert-info alert-autocloseable-info">
-          <!--
-             Electronic headstones where you can see pictures and videos of the people's lives.-->
-          </div>
-          <div class="alert alert-info alert-normal-info" hidden="hidden">
-              <button type="button" class="close">×</button>
-            I'm a normal info message. To close use  the appropriate button.
-        </div>
+         <div class="bs-example">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default2">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> How did you get into startups?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
             </div>
         </div>
+        <div class="panel panel-default2">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. What is Twitter Bootstrap?</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>Twitter Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default2">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. What is CSS?</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
+           
  
    <div class="panel-heading">
        <h3 class="panel-title">Devin's Likes</h3>

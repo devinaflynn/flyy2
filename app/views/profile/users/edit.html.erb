@@ -3,6 +3,7 @@
   
   <%= bootstrap_form_for([:profile, @user]) do |f| %>
 <div class="panel-body">
+   <%= link_to "Back", :back, class: "btn btn-default" %>
 <h2>Basic Info</h2>
   <div class="form-group">
     <%= f.text_field :name , class: "form-contol" %>
