@@ -22,7 +22,7 @@ class Profile::UsersController < ApplicationController
   private 
 
   def user_params
-  	params.require(:user).permit(:name, :description, :profile_image, :bio_1st_question, :bio_2nd_question, :bio_3rd_question)
+  	params.require(:user).permit(:name, :description, :profile_image, :bio_1st_question, :bio_2nd_question, :bio_3rd_question, :social_angelist, :social_github, :social_twitter, :social_facebook)
   end
 
 end

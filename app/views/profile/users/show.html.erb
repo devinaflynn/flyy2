@@ -1,98 +1,106 @@
 
 <div class="col-md-12">
-<div class="container4">
-<div class="row">
-  <div class="panel panel-default3">
-   <div class="panel-body">
-    <%= link_to "Back", :back, class: "btn btn-default" %>
+  <div class="container4">
     <div class="row">
-     <div class="col-md-12 col-md-offset-4 col-sm-4 col-xs-4">
-      
-      <img src="<%= @user.profile_image.url %>" class="img-circle" style="width:150px; height:150px; margin-left: 80px; margin-top: 30px;" />
-     </div>
-     <div class="col-md-8 col-md-offset-4">
-      <h3><%= current_user.name %></h3>
-       <h5><%= current_user.description %></h5>
-      <%= link_to(" Edit Profile", edit_profile_user_path, class: "btn btn-default", style: " margin-right: 10px;") %>
+      <div class="panel panel-default3">
+       <div class="panel-body">
+        <%= link_to "Back", :back, class: "btn btn-default" %>
+        <div class="row">
+         <div class="col-md-12 col-md-offset-4 col-sm-4 col-xs-4">
+          
+          <img src="<%= @user.profile_image.url %>" class="img-circle" style="width:150px; height:150px; margin-left: 80px; margin-top: 30px;" />
+        </div>
+        <div class="col-md-8 col-md-offset-4">
+          <h3><%= current_user.name %></h3>
+          <h5><%= current_user.description %></h5>
+          <%= link_to(" Edit Profile", edit_profile_user_path, class: "btn btn-default", style: " margin-right: 10px;") %>
 
-     <img src="http://i.imgur.com/ElXGAyP.png" class="img-circle" style="width:40px; height:40px;" />
-     <img src="http://i.imgur.com/6TXP7rG.png" class="img-circle" style="width:40px; height:40px;" />
-     <img src="http://i.imgur.com/XCFzKU8.png" class="img-circle" style="width:40px; height:40px;" />
-     <img src="http://i.imgur.com/SHBdK12.png" class="img-circle" style="width:40px; height:40px;" />
-     </div>
+          <a href="<%= @user.social_github %>" target="_blank">
+            <img src="http://i.imgur.com/ElXGAyP.png" class="img-circle" style="width:40px; height:40px;">
+          </a>
+          <a href="<%= @user.social_facebook %>" target="_blank">
+            <img src="http://i.imgur.com/6TXP7rG.png" class="img-circle" style="width:40px; height:40px;">
+          </a>
+          <a href="<%= @user.social_angelist %>" target="_blank">
+            <img src="http://i.imgur.com/XCFzKU8.png" class="img-circle" style="width:40px; height:40px;">
+          </a>
+          <a href="<%= @user.social_twitter %>" target="_blank">
+            <img src="http://i.imgur.com/SHBdK12.png" class="img-circle" style="width:40px; height:40px;">
+          </a>
+        </div>
+      </div>
     </div>
-   </div>
   </div>
 </div>
-    
 
-    <div class="container" style="height: 1000px;">
+
+<div class="container" style="height: 1000px;">
   <div class="row">
    <div class="panel-body">
-   
-        <br />
-        <div class="col-md-8 col-md-offset-2">
-        <%= link_to("Answer Questions", edit_profile_user_path, class: "btn btn-default pull-right", style: " margin-right: 10px;") %>
-         <h4>Bio Questions</h4>
+     
+    <br />
+    <div class="col-md-8 col-md-offset-2">
+      <%= link_to("Answer Questions", edit_profile_user_path, class: "btn btn-default pull-right", style: " margin-right: 10px;") %>
+      <h4>Bio Questions</h4>
 
-         <div class="bs-example">
-    <div class="panel-group" id="accordion">
-        <div class="panel panel-default2">
+      <div class="bs-example">
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default2">
             <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> How did you get into startups?</a>
-                </h4>
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> How did you get into startups?</a>
+              </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <p><%= @user.bio_1st_question %></p>
-                </div>
+              <div class="panel-body">
+                <p><%= @user.bio_1st_question %></p>
+              </div>
             </div>
-        </div>
-        <div class="panel panel-default2">
+          </div>
+          <div class="panel panel-default2">
             <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. What is Twitter Bootstrap?</a>
-                </h4>
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. What is Twitter Bootstrap?</a>
+              </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p><%= @user.bio_2nd_question %></p>
-                </div>
+              <div class="panel-body">
+                <p><%= @user.bio_2nd_question %></p>
+              </div>
             </div>
-        </div>
-        <div class="panel panel-default2">
+          </div>
+          <div class="panel panel-default2">
             <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. What is CSS?</a>
-                </h4>
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. What is CSS?</a>
+              </h4>
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p><%= @user.bio_3rd_question %></p>
-                </div>
+              <div class="panel-body">
+                <p><%= @user.bio_3rd_question %></p>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
-           
- 
-   <div class="panel-heading">
+      </div>
+      
+      
+      <div class="panel-heading">
        <h3 class="panel-title">Devin's Likes</h3>
-   </div>    
-   <div class="panel-body">
+     </div>    
+     <div class="panel-body">
 
-     <img src="http://i.imgur.com/ElXGAyP.png" class="img-circle" style="width:100px; height:100px;" />
-     <img src="http://i.imgur.com/XCFzKU8.png" class="img-circle" style="width:100px; height:100px;" />
-     <img src="http://i.imgur.com/SHBdK12.png" class="img-circle" style="width:100px; height:100px;" />
-     <img src="http://i.imgur.com/6TXP7rG.png" class="img-circle" style="width:100px; height:100px;" />
-     <img src="http://i.imgur.com/XCFzKU8.png" class="img-circle" style="width:100px; height:100px;" />
-     <img src="http://i.imgur.com/SHBdK12.png" class="img-circle" style="width:100px; height:100px;" />
+       <img src="http://i.imgur.com/ElXGAyP.png" class="img-circle" style="width:100px; height:100px;" />
+       <img src="http://i.imgur.com/XCFzKU8.png" class="img-circle" style="width:100px; height:100px;" />
+       <img src="http://i.imgur.com/SHBdK12.png" class="img-circle" style="width:100px; height:100px;" />
+       <img src="http://i.imgur.com/6TXP7rG.png" class="img-circle" style="width:100px; height:100px;" />
+       <img src="http://i.imgur.com/XCFzKU8.png" class="img-circle" style="width:100px; height:100px;" />
+       <img src="http://i.imgur.com/SHBdK12.png" class="img-circle" style="width:100px; height:100px;" />
 
-   </div>
- 
+     </div>
+     
 
 
- 
+     
 
-  
+     
