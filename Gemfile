@@ -45,7 +45,7 @@ group :production do
   gem 'rails_12factor'
 end
 
-ruby "2.1.1"
+ruby "2.1.5"
 
 gem 'bootstrap_form'
 # Use ActiveModel has_secure_password

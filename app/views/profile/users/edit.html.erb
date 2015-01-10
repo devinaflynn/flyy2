@@ -1,62 +1,61 @@
 <div class="container3">
-<div class="col-md-5 col-md-offset-1">
-  
-  <%= bootstrap_form_for([:profile, @user]) do |f| %>
-<div class="panel-body">
-   <%= link_to "Back", :back, class: "btn btn-default" %>
-<h2>Basic Info</h2>
-  <div class="form-group">
-    <%= f.text_field :name , class: "form-contol" %>
-    <%= f.text_area :description , class: "form-contol" %>
-   </div> 
-  <%= f.submit "Update", class: "btn btn-dark" %>
-  <% end %>
+  <div class="col-md-5 col-md-offset-1">
+    <%= bootstrap_form_for([:profile, @user]) do |f| %>
+      <div class="panel-body">
+        <%= link_to "Back", :back, class: "btn btn-default" %>
+        <h2>Basic Info</h2>
+        <div class="form-group">
+          <%= f.file_field :profile_image, class: "form-contol" %>
+          <img src="<%=@user.profile_image.url %>">
+        </div>
+        <div class="form-group">
+          <%= f.text_field :name , class: "form-contol" %>
+          <%= f.text_area :description , class: "form-contol" %>
+        </div> 
+        <%= f.submit "Update", class: "btn btn-dark" %> 
+      </div>
+    <% end %>
   </div>
 </div>
-</div>
+
 
 <div class="col-md-4">
-
- <%= bootstrap_form_for([:profile, @user]) do |f| %>
-<div class="panel-body">
-<h3>Edit Social Links</h3>
-<div class="form-group">
-    <img src="http://i.imgur.com/6TXP7rG.png" class="img-circle" style="width:40px; height:40px;" />
-    <%= f.text_field :name , class: "form-contol" %> 
-     <img src="http://i.imgur.com/XCFzKU8.png" class="img-circle" style="width:40px; height:40px;" />
-    <%= f.text_field :name , class: "form-contol" %>
-     <img src="http://i.imgur.com/SHBdK12.png" class="img-circle" style="width:40px; height:40px;" />
-    <%= f.text_field :name , class: "form-contol" %>
-     <img src="http://i.imgur.com/YR5XYLq.png" class="img-circle" style="width:40px; height:40px;" />
-    <%= f.text_field :name , class: "form-contol" %>
-</div>
-<%= f.submit "Update", class: "btn btn-dark" %>
+  <%= bootstrap_form_for([:profile, @user]) do |f| %>
+    <div class="panel-body">
+      <h3>Edit Social Links</h3>
+      <div class="form-group">
+        <img src="http://i.imgur.com/6TXP7rG.png" class="img-circle" style="width:40px; height:40px;" />
+        <%= f.text_field :name , class: "form-contol" %> 
+        <img src="http://i.imgur.com/XCFzKU8.png" class="img-circle" style="width:40px; height:40px;" />
+        <%= f.text_field :name , class: "form-contol" %>
+        <img src="http://i.imgur.com/SHBdK12.png" class="img-circle" style="width:40px; height:40px;" />
+        <%= f.text_field :name , class: "form-contol" %>
+        <img src="http://i.imgur.com/YR5XYLq.png" class="img-circle" style="width:40px; height:40px;" />
+        <%= f.text_field :name , class: "form-contol" %>
+      </div>
+      <%= f.submit "Update", class: "btn btn-dark" %>
+    </div>    
   <% end %>
-</div>    
+
 </div>
 
 <div class="row">
-
-<div class="container3">
-<div class="col-md-10 col-md-offset-1">
+  <div class="container3">
+    <div class="col-md-10 col-md-offset-1">
   
-  <%= bootstrap_form_for([:profile, @user]) do |f| %>
-<div class="panel-body">
-<h2>Bio Questions</h2>
-  <div class="form-group">
-    <%= f.text_field :name , class: "form-contol" %>
-    <%= f.text_area :description , class: "form-contol" %>
-   </div> 
-  <%= f.submit "Update", class: "btn btn-dark pull-right" %>
-  <% end %>
+      <%= bootstrap_form_for([:profile, @user]) do |f| %>
+        <div class="panel-body">
+          <h2>Bio Questions</h2>
+          <div class="form-group">
+            <%= f.text_field :name , class: "form-contol" %>
+            <%= f.text_area :description , class: "form-contol" %>
+          </div> 
+          <%= f.submit "Update", class: "btn btn-dark pull-right" %>
+        </div>
+      <% end %>
+      <h3>Cancel my account</h3>
+
+      <p>Unhappy? <%= button_to "Cancel my account", cancel_user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+    </div>
   </div>
-  <h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", cancel_user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
 </div>
-</div>
-</div>
-
-
-
-

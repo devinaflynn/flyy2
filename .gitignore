@@ -23,3 +23,6 @@
 
 # Ignore rvm files
 .ruby-*
+
+# Ignore updaloaded files
+public/uploads/*
