@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110190105) do
+ActiveRecord::Schema.define(version: 20150110203318) do
 
   create_table "apps", force: true do |t|
     t.string   "name"
@@ -62,6 +62,9 @@ ActiveRecord::Schema.define(version: 20150110190105) do
     t.string   "avatar"
     t.text     "description"
     t.string   "profile_image"
+    t.text     "bio_1st_question"
+    t.text     "bio_2nd_question"
+    t.text     "bio_3rd_question"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
