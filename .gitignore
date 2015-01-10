@@ -17,3 +17,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore OSX .DS_Store
+.DS_Store
+
+# Ignore rvm files
+.ruby-*
