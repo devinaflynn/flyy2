@@ -2,7 +2,7 @@
   <div class="col-md-5 col-md-offset-1">
     <%= bootstrap_form_for([:profile, @user]) do |f| %>
       <div class="panel-body">
-        <%= link_to "Back", :back, class: "btn btn-default" %>
+        <%= link_to "Back", profile_user_path, class: "btn btn-default" %>
         <h2>Basic Info</h2>
         <div class="form-group">
           <%= f.file_field :profile_image, class: "form-contol" %>
