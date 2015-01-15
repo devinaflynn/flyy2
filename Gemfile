@@ -33,6 +33,7 @@ gem 'acts_as_votable'
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'fog'
+gem 'will_paginate'
 
 
 group :development do

@@ -6,7 +6,11 @@ class AppsController < ApplicationController
   # GET /apps
   # GET /apps.json
   def index
-    @apps = App.order(created_at: :desc).all
+    @apps = App.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
+    respond_to do |format|
+      format.html
+      format.js { render layout: false }
+    end
   end
 
   def viewed

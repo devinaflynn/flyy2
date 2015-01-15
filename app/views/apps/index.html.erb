@@ -42,88 +42,10 @@
 </div>
 
 
-<% @apps.each do |app| %>
-  <div class="row">
-    <div class="col-md-2 col-md-offset-1">
-      <div class="container">
-        <div class="clearfix">
-          <div class="panel-body">
-            <%= link_to image_tag(app.logo.url, class: "img-circle img-responsive", style: "width:120px; height:120px; margin-bottom:5px; margin-right:10px; margin-left 70px;"), app %>
+<div id="my-apps">
+  <%= render partial: 'app', collection: @apps %>
+</div>
 
-            <div class="col-md-2">
-              <h4><%= app.tagline %></h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-md-5 col-md-offset-2">
-      <div id="p-button3" class="btn-group-vertical" style="width:34px;">
-        <%= link_to "", upvotes_path(app_id: app.id), remote: true, method: :post, title: "Upvote this App", 'data-id' => app.id, 'data-type' => 'json', class: "btn btn-default btn-sm btn-default glyphicon glyphicon-chevron-up pull-right" %>
-        <button class="btn btn-ups btn-sm btn-up pull-right btn<%= app.id %>" style="border-color:whitesmoke;padding-left:8px;">
-          <%= app.votes_for.size %>
-        </button>
-      </div>
-
-      <div class="panel">
-        <iframe width="100%" height="400" src="<%= app_youtube_embed_url(app) %>" frameborder="0" allowfullscreen></iframe>
-        <div class="panel-body pb-start">
-          <div class="p-startup">
-            <%= image_tag(app.logo.url, class: "img-circle", style: "width:30px; height:30px; margin-bottom:5px; margin-right:10px;") %>
-
-            <strong>
-              <%= link_to app.name, app %>
-            </strong>
-
-            <div class="pull-right">
-              <h4><%= app.view_count %> plays</h4>
-            </div>
-            <%= link_to '<h4><i class="fa fa-comment"></i></h4>'.html_safe, comments_get_comments_by_app_path(app_id: app.id), remote: true, class: 'btn btn-default2' %>
-
-            <!-- Modal -->
-            <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header modal-header-success">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4><i class="glyphicon glyphicon-comment"></i> Comments</h4>
-                  </div>
-                  <div class="modal-body">
-                    <div class="detailBox">
-
-                      <div class="actionBox">
-                        <ul class="commentList">
-
-                          <div id="comments_from_server">
-
-                          </div>
-
-                        </ul>
-
-                        <%= form_for(@comment, remote: true, layout: :inline, role: 'form') do |f| %>
-                          <%= hidden_field_tag :app_id, value='', id: 'app_id' %>
-                          <%= f.text_field :body %>
-                          <%= f.submit 'Add', class: "btn btn-primary" %>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-                <!-- /.modal-content -->
-              </div>
-              <!-- /.modal-dialog -->
-            </div>
-            <!-- /.modal -->
-
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
+<div id="infinite-scrolling" align="center" style="display: none">
+  <%= will_paginate %>
+</div>

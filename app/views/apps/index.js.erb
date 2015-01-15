@@ -1,0 +1,7 @@
+$('#my-apps').append('<%= j render partial: 'app', collection: @apps %>');
+<% if @apps.next_page %>
+$('.pagination').replaceWith('<%= j will_paginate @apps %>');
+<% else %>
+$(window).off('scroll');
+$('.pagination').remove();
+<% end %>
