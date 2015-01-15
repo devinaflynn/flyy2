@@ -1,2 +1,2 @@
-$('#comments_from_server').html("<%= escape_javascript(render 'comments') %>");
+$('#comments_from_server').html("<%= escape_javascript(render partial: 'comment', collection: @comments) %>");
 $('#comment_body').val('');

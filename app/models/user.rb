@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 
   mount_uploader :profile_image, ProfileImageUploader
 
+  acts_as_voter
+
   #def my_complete_profile_info
   #	name + ',' +...
   #end

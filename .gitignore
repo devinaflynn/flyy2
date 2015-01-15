@@ -26,3 +26,5 @@
 
 # Ignore updaloaded files
 public/uploads/*
+
+.idea

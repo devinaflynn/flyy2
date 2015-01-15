@@ -3,152 +3,98 @@
   </div>
 
   <div class="col-md-6 col-md-offset-3">
-  <div  class="row">
-  <div class="panel-body">
-    <div class="alert alert-success" role="alert">Please refresh page in 1 minute, it takes a sec for us to upload the video to the servers</div>
-  </div>
-  </div>
-  </div>
+    <div  class="row">
+      <div class="panel-body">
+        <div class="alert alert-success" role="alert">Please refresh page in 1 minute, it takes a sec for us to upload the video to the servers</div>
+        </div>
+      </div>
+    </div>
 
-  <div class="row">
+    <div class="row">
 
-    <div class="col-md-3 col-md-offset-1">
-      <div class="panel panel-default">
-        <div class="panel-body">
+      <div class="col-md-3 col-md-offset-1">
+        <div class="panel panel-default">
+          <div class="panel-body">
 
-          <div class="row">
+            <div class="row">
 
-            <div class="col-md-12 col-sm-4 col-xs-4">
+              <div class="col-md-12 col-sm-4 col-xs-4">
 
 
 
               <!-- <img src="http://images.chinatopix.com/data/images/full/6205/airbnb-new-logo.png?w=600" class="img-circleesponsive" style="border-top-left-radius: 6px; border-top-right-radius: 6px;" /> -->
-            </div>
-            <div class="container5">
-              <div class="col-md-12 col-sm-3">
-                <%= image_tag(@app.logo.url, class: "img-circle", style: "width:100px; height:100px; margin-bottom:5px; margin-left:50px;" ) %>
+              </div>
+              <div class="container5">
+                <div class="col-md-12 col-sm-3">
+                  <%= image_tag(@app.logo.url, class: "img-circle", style: "width:100px; height:100px; margin-bottom:5px; margin-left:50px;" ) %>
 
-                <h3><%=@app.name%></h3>    
-                <p><%=@app.tagline%> </p>
-                
-                <h4><%=link_to @app.website%></h4>
+                  <h3><%=@app.name%></h3>
+                  <p><%=@app.tagline%> </p>
+
+                  <h4><%=link_to @app.website%></h4>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="panel panel-default2">
+        <div class="panel panel-default2">
 
-        <div class="panel-body">
-         <img src="http://i.imgur.com/wwyPtHH.jpg" class="img-circle" style="width:80px; height:80px; margin-right:10px;" />
-         <img src="http://i.imgur.com/x3GGS4h.png" class="img-circle" style="width:80px; height:80px; margin-right:10px;" />
-         <img src="http://i.imgur.com/GNOZAfp.png" class="img-circle" style="width:80px; height:80px; margin-right:10px;" />
+          <div class="panel-body">
+           <img src="http://i.imgur.com/wwyPtHH.jpg" class="img-circle" style="width:80px; height:80px; margin-right:10px;" />
+           <img src="http://i.imgur.com/x3GGS4h.png" class="img-circle" style="width:80px; height:80px; margin-right:10px;" />
+           <img src="http://i.imgur.com/GNOZAfp.png" class="img-circle" style="width:80px; height:80px; margin-right:10px;" />
 
+         </div>
        </div>
-     </div>
 
-     <div class="panel panel-default">
+       <div class="panel panel-default">
+        <div class="panel-body">
+          <img src="http://i.imgur.com/FDo5YAQ.png" class="img-circle" style="width:50px; height:50px;" />
+          <img src="http://i.imgur.com/6TXP7rG.png" class="img-circle" style="width:50px; height:50px;" />
+          <img src="http://i.imgur.com/XCFzKU8.png" class="img-circle" style="width:50px; height:50px;" />
+          <img src="http://i.imgur.com/SHBdK12.png" class="img-circle" style="width:50px; height:50px;" />
+          <img src="http://i.imgur.com/Q255YPn.png" class="img-circle" style="width:50px; height:50px;" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-md-offset-1">
       <div class="panel-body">
-        <img src="http://i.imgur.com/FDo5YAQ.png" class="img-circle" style="width:50px; height:50px;" />
-        <img src="http://i.imgur.com/6TXP7rG.png" class="img-circle" style="width:50px; height:50px;" />
-        <img src="http://i.imgur.com/XCFzKU8.png" class="img-circle" style="width:50px; height:50px;" />
-        <img src="http://i.imgur.com/SHBdK12.png" class="img-circle" style="width:50px; height:50px;" />
-        <img src="http://i.imgur.com/Q255YPn.png" class="img-circle" style="width:50px; height:50px;" />
+        <div class="panel-default">
+          <div class="panel-heading">
+            <h4>Intro Video</h4>
+          </div>
+
+          <iframe width="100%" height="325" src="//www.youtube.com/embed/<%=@app.youtube_id%>?rel=0&modestbranding=1;autohide=1&amp;showinfo=0&amp;controls=0;rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-10">
+      <div class="container">
+        <div class="detailBox">
+
+          <div class="actionBox">
+
+            <ul class="commentList">
+              <div id="comments_from_server">
+                <%= render partial: 'comments/comment', collection: @comments %>
+              </div>
+            </ul>
+
+            <%= form_for(Comment.new  , remote: true, layout: :inline, role: 'form') do |f| %>
+              <%= hidden_field_tag :app_id, @app.id, id: 'app_id' %>
+              <%= f.text_field :body %>
+              <%= f.submit 'Add', class: "btn btn-primary" %>
+            <% end %>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="col-md-6 col-md-offset-1">
-    <div class="panel-body">
-    <div class="panel-default">
-    <div class="panel-heading">
-     <h4>Intro Video</h4>
-    </div> 
-
-      <iframe width="100%" height="325" src="//www.youtube.com/embed/<%=@app.youtube_id%>?rel=0&modestbranding=1;autohide=1&amp;showinfo=0&amp;controls=0;rel=0" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div>
-</div> 
 </div>
-
-
-<div class="col-md-10">
-  <div class="container">
-    <div class="detailBox">
-      <h4>
-
-
-        <div class="actionBox">
-          <ul class="commentList">
-            <li>
-              <div class="commenterImage">
-                <img src="http://lorempixel.com/50/50/people/6" />
-              </div>
-              <div class="commentText">
-                <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-              </div>
-            </li>
-            <li>
-              <div class="commenterImage">
-                <img src="http://lorempixel.com/50/50/people/7" />
-              </div>
-              <div class="commentText">
-                <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-              </div>
-            </li>
-            <li>
-              <div class="commenterImage">
-                <img src="http://lorempixel.com/50/50/people/7" />
-              </div>
-              <div class="commentText">
-                <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-              </div>
-            </li>
-            <li>
-              <div class="commenterImage">
-                <img src="http://lorempixel.com/50/50/people/7" />
-              </div>
-              <div class="commentText">
-                <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-              </div>
-            </li>
-            <li>
-              <div class="commenterImage">
-                <img src="http://lorempixel.com/50/50/people/7" />
-              </div>
-              <div class="commentText">
-                <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-              </div>
-            </li>
-            <li>
-              <div class="commenterImage">
-                <img src="http://lorempixel.com/50/50/people/9" />
-              </div>
-              <div class="commentText">
-                <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-              </div>
-            </li>
-          </ul>
-          <form class="form-inline" role="form">
-            <div class="form-group">
-              <input class="form-control" type="text" placeholder="Share comment..." />
-            </div>
-            <div class="form-group">
-              <button class="btn btn-primary">Add</button>
-            </div>
-          </h4> 
-        </form>
-      </div>
-    </div>
-  </div> 
-</div> 
-
 
 

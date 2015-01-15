@@ -39,6 +39,7 @@ class AppsController < ApplicationController
   # GET /apps/1.json
   def show
     @app = App.find(params[:id])
+    @comments = @app.comments.order(created_at: :desc)
   end
 
   # GET /apps/new

@@ -1,6 +1,7 @@
 class Profile::UsersController < ApplicationController
   def show
     @user = current_user
+    @voted_apps = current_user.find_voted_items
 
   end
 
