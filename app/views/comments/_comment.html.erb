@@ -1,10 +1,8 @@
-<% @comments.each do |comment| -%>
 <li>
   <div class="commenterImage">
-    <img src="http://lorempixel.com/50/50/people/6" />
+    <img src="<%= comment.user.profile_image.url %>">
   </div>
   <div class="commentText">
       <p class=""><%= comment.body %></p> <span class="date sub-text"><%= comment.created_at %></span>
   </div>
 </li>
-<% end %>
