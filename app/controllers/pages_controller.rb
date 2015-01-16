@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+
+  
   def index
   	client = YouTubeIt::Client.new(username:ENV["YOUTUBE_LOGIN"], password:ENV["YOUTUBE_PASSWORD"], dev_key: ENV["YOUTUBE_API_KEY"])
   	@videos = client.my_videos
