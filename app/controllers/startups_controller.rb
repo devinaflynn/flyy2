@@ -42,8 +42,13 @@ class StartupsController < ApplicationController
   # GET /startups/1
   # GET /startups/1.json
   def show
-    @app = App.find(params[:id])
-    @comments = @app.comments.order(created_at: :desc)
+    @app = App.where(slug: params[:slug]).first
+    if @app == nil
+      render plain: "404 Not Found", status: 404
+    else
+      @comments = @app.comments.order(created_at: :desc)
+    end
+
   end
 
   # GET /startups/new

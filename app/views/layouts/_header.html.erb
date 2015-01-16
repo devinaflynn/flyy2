@@ -47,7 +47,7 @@
               <li class="divider"></li>
               <li role="presentation" class="dropdown-header">Startups</li>
               <% @apps.each do |app| %>
-                <li><%= link_to app.name, startup_path(app) %></li>
+                <li><%= link_to app.name, startup_path(app.slug) %></li>
               <% end %>
             </ul>
           </li>

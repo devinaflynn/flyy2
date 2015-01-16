@@ -4,7 +4,10 @@
     <div class="container">
       <div class="clearfix">
         <div class="panel-body">
-          <%= link_to image_tag(app.logo.url, class: "img-circle img-responsive", style: "width:120px; height:120px; margin-bottom:5px; margin-right:10px; margin-left 70px;"), startup_path(app) %>
+          <%= link_to image_tag(app.logo.url,
+                                class: "img-circle img-responsive",
+                                style: "width:120px; height:120px; margin-bottom:5px; margin-right:10px; margin-left 70px;"),
+                                startup_path(app.slug) %>
 
           <div class="col-md-2">
             <h4><%= app.tagline %></h4>
@@ -17,7 +20,11 @@
 
   <div class="col-md-5 col-md-offset-2">
     <div id="p-button3" class="btn-group-vertical" style="width:34px;">
-      <%= link_to "", upvotes_path(app_id: app.id), remote: true, method: :post, title: "Upvote this App", 'data-id' => app.id, 'data-type' => 'json', class: "btn btn-default btn-sm btn-default glyphicon glyphicon-chevron-up pull-right" %>
+      <%= link_to "", upvotes_path(app_id: app.id),
+                      remote: true, method: :post, title: "Upvote this App",
+                      'data-id' => app.id,
+                      'data-type' => 'json',
+                      class: "btn btn-default btn-sm btn-default glyphicon glyphicon-chevron-up pull-right" %>
       <button class="btn btn-ups btn-sm btn-up pull-right btn<%= app.id %>" style="border-color:whitesmoke;padding-left:8px;">
         <%= app.votes_for.size %>
       </button>
@@ -30,13 +37,15 @@
           <%= image_tag(app.logo.url, class: "img-circle", style: "width:30px; height:30px; margin-bottom:5px; margin-right:10px;") %>
 
           <strong>
-            <%= link_to app.name, startup_path(app) %>
+            <%= link_to app.name, startup_path(app.slug) %>
           </strong>
 
           <div class="pull-right">
             <h4><%= app.view_count %> plays</h4>
           </div>
-          <%= link_to '<h4><i class="fa fa-comment"></i></h4>'.html_safe, comments_get_comments_by_app_path(app_id: app.id), remote: true, class: 'btn btn-default2' %>
+          <%= link_to comments_get_comments_by_app_path(app_id: app.id), remote: true, class: 'btn btn-default2' do %>
+            <h4><i class="fa fa-comment"></i></h4>
+          <% end %>
 
           <!-- Modal -->
           <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -51,11 +60,8 @@
 
                     <div class="actionBox">
                       <ul class="commentList">
-
                         <div id="comments_from_server">
-
                         </div>
-
                       </ul>
 
                       <%= form_for(@comment, remote: true, layout: :inline, role: 'form') do |f| %>
