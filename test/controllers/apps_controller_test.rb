@@ -8,7 +8,7 @@ class AppsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:apps)
+    assert_not_nil assigns(:startups)
   end
 
   test "should get new" do

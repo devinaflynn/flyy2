@@ -9,13 +9,13 @@
           </button>
           <ul class="dropdown-menu" role="menu">
             <li style="">
-              <%= link_to(" websites", websites_apps_path, class: "") %>
+              <%= link_to(" websites", websites_startups_path, class: "") %>
             </li>
             <li style="">
-              <%= link_to(" mobile", mobile_apps_path, class: "") %>
+              <%= link_to(" mobile", mobile_startups_path, class: "") %>
             </li>
             <li style="">
-              <%= link_to(" products", products_apps_path, class: "") %>
+              <%= link_to(" products", products_startups_path, class: "") %>
             </li>
           </ul>
         </div>
@@ -26,13 +26,13 @@
           </button>
           <ul class="dropdown-menu" role="menu">
             <li style="">
-              <%= link_to("Newest", apps_path, class: "") %>
+              <%= link_to("Newest", startups_path, class: "") %>
             </li>
             <li style="">
-              <%= link_to("Most Viewed", viewed_apps_path, class: "") %>
+              <%= link_to("Most Viewed", viewed_startups_path, class: "") %>
             </li>
             <li style="margin-right:3px;">
-              <%= link_to("Popular", popular_apps_path, class: "") %>
+              <%= link_to("Popular", popular_startups_path, class: "") %>
             </li>
           </ul>
         </div>
@@ -47,5 +47,5 @@
 </div>
 
 <div id="infinite-scrolling" align="center" style="display: none">
-  <%= will_paginate %>
+  <%= will_paginate @apps %>
 </div>

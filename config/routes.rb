@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get 'comments/get_comments_by_app' => 'comments#get_comments_by_app'
   resources :comments
 
-  resources :apps do
-    get 'youtube_callback' => 'apps#youtube_callback'
+  resources :startups do
+    get 'youtube_callback' => 'startups#youtube_callback'
     get "mobile", on: :collection
     get "websites", on: :collection
     get "products", on: :collection

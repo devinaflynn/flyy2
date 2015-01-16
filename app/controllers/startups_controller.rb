@@ -1,10 +1,10 @@
-class AppsController < ApplicationController
+class StartupsController < ApplicationController
   before_action :set_app, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_comment, only: [:index, :websites, :viewed, :popular, :mobile, :products ]
 
-  # GET /apps
-  # GET /apps.json
+  # GET /startups
+  # GET /startups.json
   def index
     @apps = App.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
     respond_to do |format|
@@ -25,33 +25,33 @@ class AppsController < ApplicationController
 
 
   def mobile
-    @apps = App.mobile.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
+    @apps = App.mobile.paginate(page: params[:page], per_page: 10)
     render :index
   end
 
   def websites
-    @apps = App.websites.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
+    @apps = App.websites.paginate(page: params[:page], per_page: 10)
     render :index
   end
 
   def products
-    @apps = App.products.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
+    @apps = App.products.paginate(page: params[:page], per_page: 10)
     render :index
   end
 
-  # GET /apps/1
-  # GET /apps/1.json
+  # GET /startups/1
+  # GET /startups/1.json
   def show
     @app = App.find(params[:id])
     @comments = @app.comments.order(created_at: :desc)
   end
 
-  # GET /apps/new
+  # GET /startups/new
   def new
     @app = App.new
   end
 
-  # GET /apps/1/edit
+  # GET /startups/1/edit
   def edit
 
     client = YouTubeIt::Client.new(username:ENV["YOUTUBE_LOGIN"], password:ENV["YOUTUBE_PASSWORD"], dev_key: ENV["YOUTUBE_API_KEY"])
@@ -69,8 +69,8 @@ class AppsController < ApplicationController
     end
   end
 
-  # POST /apps
-  # POST /apps.json
+  # POST /startups
+  # POST /startups.json
   def create
     @app = current_user.apps.new(app_params)
 
@@ -85,8 +85,8 @@ class AppsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /apps/1
-  # PATCH/PUT /apps/1.json
+  # PATCH/PUT /startups/1
+  # PATCH/PUT /startups/1.json
   def update
     respond_to do |format|
       if @app.update(app_params)
@@ -99,8 +99,8 @@ class AppsController < ApplicationController
     end
   end
 
-  # DELETE /apps/1
-  # DELETE /apps/1.json
+  # DELETE /startups/1
+  # DELETE /startups/1.json
   def destroy
     @app.destroy
     respond_to do |format|
