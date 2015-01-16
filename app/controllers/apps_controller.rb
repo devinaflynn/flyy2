@@ -14,28 +14,28 @@ class AppsController < ApplicationController
   end
 
   def viewed
-    @apps = App.all.by_view_count
+    @apps = App.all.by_view_count.paginate(page: params[:page], per_page: 10)
     render :index
   end
 
   def popular
-    @apps = App.all.by_vote_count
+    @apps = App.all.by_vote_count.paginate(page: params[:page], per_page: 10)
     render :index
   end
 
 
   def mobile
-    @apps = App.mobile.all
+    @apps = App.mobile.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
     render :index
   end
 
   def websites
-    @apps = App.websites.all
+    @apps = App.websites.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
     render :index
   end
 
   def products
-    @apps = App.products.all
+    @apps = App.products.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
     render :index
   end
 
