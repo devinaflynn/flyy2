@@ -21,7 +21,7 @@ class AppsControllerTest < ActionController::TestCase
       post :create, app: { name: @app.name, tagline: @app.tagline, website: @app.website }
     end
 
-    assert_redirected_to app_path(assigns(:app))
+    assert_redirected_to startup_path(slug: assigns(:app).slug)
   end
 
   test "should show app" do
@@ -36,7 +36,7 @@ class AppsControllerTest < ActionController::TestCase
 
   test "should update app" do
     patch :update, id: @app, app: { name: @app.name, tagline: @app.tagline, website: @app.website }
-    assert_redirected_to app_path(assigns(:app))
+    assert_redirected_to startup_path(slug: assigns(:app)slug)
   end
 
   test "should destroy app" do
@@ -44,6 +44,6 @@ class AppsControllerTest < ActionController::TestCase
       delete :destroy, id: @app
     end
 
-    assert_redirected_to apps_path
+    assert_redirected_to startups_path
   end
 end

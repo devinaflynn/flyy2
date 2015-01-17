@@ -6,7 +6,7 @@ class StartupsController < ApplicationController
   # GET /startups
   # GET /startups.json
   def index
-    @apps = App.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
+    @apps = App.paginate(page: params[:page], per_page: 2).order(created_at: :desc)
     respond_to do |format|
       format.html
       format.js { render layout: false }
@@ -81,7 +81,7 @@ class StartupsController < ApplicationController
 
     respond_to do |format|
       if @app.save
-        format.html { redirect_to edit_app_path(@app), notice: 'Now you can upload the video...' }
+        format.html { redirect_to edit_startup_path(@app.slug), notice: 'Now you can upload the video...' }
         format.json { render :show, status: :created, location: @app }
       else
         format.html { render :new }
