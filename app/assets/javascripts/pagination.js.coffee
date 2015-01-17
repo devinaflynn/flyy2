@@ -1,7 +1,8 @@
 jQuery ->
-  if $('#infinite-scrolling').size() > 0
+  if $('.pagination').length
     $(window).on 'scroll', ->
-      url = $('.pagination a').attr('href')
+      url = $('.pagination .next_page').attr('href')
       if url && $(window).scrollTop() > $(document).height() - $(window).height() - 50
-        $.getScript url
+        $('.pagination').text("Fetching more products...")
+        $.getScript(url)
     $(window).scroll()
