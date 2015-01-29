@@ -59,15 +59,15 @@ class StartupsController < ApplicationController
   # GET /startups/1/edit
   def edit
     client = YouTubeIt::Client.new(username:ENV["YOUTUBE_LOGIN"], password:ENV["YOUTUBE_PASSWORD"], dev_key: ENV["YOUTUBE_API_KEY"])
-    @upload_info = client.upload_token({title:@app.name, description:@app.tagline, category: "Tech", keywords:["flyy",@app.name]}, app_youtube_callback_url(:app_id=>@app.id))
+    @upload_info = client.upload_token({title:@app.name, description:@app.tagline, category: "Tech", keywords:["flyy",@app.name]}, startup_youtube_callback_url(:startup_id=>@app.slug))
   end
 
   def youtube_callback
-    @app = App.find(params[:app_id])
+    @app = App.where(slug: params[:startup_id]).first
     if @app
       @app.youtube_id=params[:id]
       @app.save
-      redirect_to @app
+      redirect_to startup_path(@app.slug)
     else
       redirect_to root_path
     end
@@ -108,7 +108,7 @@ class StartupsController < ApplicationController
   def destroy
     @app.destroy
     respond_to do |format|
-      format.html { redirect_to apps_url, notice: 'App was successfully destroyed.' }
+      format.html { redirect_to startups_url, notice: 'App was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -117,7 +117,7 @@ class StartupsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_app
       begin
-        @app = current_user.apps.where(slug: params[:id])
+        @app = current_user.apps.where(slug: params[:id]).first
       rescue
         redirect_to root_path 
       end
