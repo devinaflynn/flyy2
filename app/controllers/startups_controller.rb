@@ -58,7 +58,6 @@ class StartupsController < ApplicationController
 
   # GET /startups/1/edit
   def edit
-
     client = YouTubeIt::Client.new(username:ENV["YOUTUBE_LOGIN"], password:ENV["YOUTUBE_PASSWORD"], dev_key: ENV["YOUTUBE_API_KEY"])
     @upload_info = client.upload_token({title:@app.name, description:@app.tagline, category: "Tech", keywords:["flyy",@app.name]}, app_youtube_callback_url(:app_id=>@app.id))
   end
@@ -118,7 +117,7 @@ class StartupsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_app
       begin
-        @app = current_user.apps.find(params[:id])
+        @app = current_user.apps.where(slug: params[:id])
       rescue
         redirect_to root_path 
       end
