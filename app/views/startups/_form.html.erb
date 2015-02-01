@@ -3,7 +3,7 @@
  
     <div class="col-md-6 col-md-offset-3">
       <div class="well well-sm">
-        <%= form_for(@app, url: startup_path(@app.slug), html: {class: "form-horizontal"}) do |f| %>
+        <%= form_for(@app, url: @app.slug.nil? ? startups_path : startup_path(@app.slug), html: {class: "form-horizontal"}) do |f| %>
           <fieldset>
             <legend class="text-center"><h4>Tell us a little bit about your startup</h4></legend>
             <% if @app.errors.any? %>
@@ -61,6 +61,7 @@
             <div class="form-group">
               <div class="col-md-12 text-right">
                 <%= f.submit "Update", class: "btn btn-primary btn-md" %>
+                <%= link_to 'Edit Video', startup_add_youtube_path(startup_id: @app.slug), class: "btn btn-primary btn-md" %>
               </div>
             </div>
           <% end %>

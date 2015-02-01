@@ -60,6 +60,7 @@ class StartupsController < ApplicationController
   end
 
   def add_youtube
+    @app = current_user.apps.where(slug: params[:startup_id]).first
     client = YouTubeIt::Client.new(username:ENV["YOUTUBE_LOGIN"], password:ENV["YOUTUBE_PASSWORD"], dev_key: ENV["YOUTUBE_API_KEY"])
     @upload_info = client.upload_token({title:@app.name, description:@app.tagline, category: "Tech", keywords:["flyy",@app.name]}, startup_youtube_callback_url(:startup_id=>@app.slug))
   end
@@ -83,7 +84,7 @@ class StartupsController < ApplicationController
 
     respond_to do |format|
       if @app.save
-        format.html { redirect_to startup_add_youtube_path(@app.slug), notice: 'Now you can upload the video...' }
+        format.html { redirect_to startup_add_youtube_path(startup_id: @app.slug), notice: 'Now you can upload the video...' }
         format.json { render :show, status: :created, location: @app }
       else
         format.html { render :new }
