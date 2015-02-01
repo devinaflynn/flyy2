@@ -44,10 +44,13 @@
               <li><%= link_to "Settings", edit_profile_user_path %></li>
               <li><%= link_to "Stats", stats_path %></li>
               <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-              <li class="divider"></li>
-              <li role="presentation" class="dropdown-header">Startups</li>
-              <% @apps.each do |app| %>
-                <li><%= link_to app.name, startup_path(app.slug) %></li>
+              <% if @user_apps.count > 0 %>
+                <li class="divider"></li>
+              
+                <li role="presentation" class="dropdown-header">Startups</li>
+                <% @user_apps.each do |app| %>
+                  <li><%= link_to app.name, startup_detail_path(app.slug) %></li>
+                <% end %>
               <% end %>
             </ul>
           </li>
