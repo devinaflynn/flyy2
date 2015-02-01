@@ -60,9 +60,9 @@
 
             <div class="form-group">
               <div class="col-md-12 text-right">
-                <%= f.submit "Update", class: "btn btn-primary btn-md" %>
-                <%= link_to 'Edit Video', startup_add_youtube_path(startup_id: @app.slug), class: "btn btn-primary btn-md" %>
-              </div>
+                <%= f.submit @app.persisted? ? 'Update' : 'Next Step', class: "btn btn-primary btn-md" %>
+                <%= link_to('Edit Video', startup_add_youtube_path(startup_id: @app.slug), class: "btn btn-primary btn-md") if @app.persisted? %>
+    '         </div>
             </div>
           <% end %>
         </fieldset>
