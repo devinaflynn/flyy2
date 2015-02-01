@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
-  validates :name, presence: true, on: :update
+  # validates :name, presence: true, on: :update
 
   mount_uploader :profile_image, ProfileImageUploader
 
