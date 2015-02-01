@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116112718) do
+ActiveRecord::Schema.define(version: 20150201114326) do
 
   create_table "apps", force: true do |t|
     t.string   "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150116112718) do
     t.string   "category"
     t.integer  "cached_votes_total", default: 0
     t.string   "slug"
+    t.string   "founders"
   end
 
   add_index "apps", ["cached_votes_total"], name: "index_apps_on_cached_votes_total"

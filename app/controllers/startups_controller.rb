@@ -6,7 +6,7 @@ class StartupsController < ApplicationController
   # GET /startups
   # GET /startups.json
   def index
-    @apps = App.paginate(page: params[:page], per_page: 2).order(created_at: :desc)
+    @apps = current_user.apps.paginate(page: params[:page], per_page: 2).order(created_at: :desc)
     respond_to do |format|
       format.html
       format.js { render layout: false }
@@ -76,7 +76,7 @@ class StartupsController < ApplicationController
   # POST /startups
   # POST /startups.json
   def create
-    @app = current_user.apps.new(app_params)
+    @app = current_user.apps.build(app_params)
 
     respond_to do |format|
       if @app.save
@@ -125,7 +125,7 @@ class StartupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def app_params
-      params.require(:app).permit(:name, :tagline, :website,:logo,:category)
+      params.require(:app).permit(:name, :tagline, :founders, :website,:logo,:category)
     end
 
     def set_comment
