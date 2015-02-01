@@ -15,7 +15,6 @@
       <div class="col-md-3 col-md-offset-1">
         <div class="panel panel-default">
           <div class="panel-body">
-
             <div class="row">
 
               <div class="col-md-12 col-sm-4 col-xs-4">
@@ -63,7 +62,7 @@
       <div class="panel-body">
         <div class="panel-default">
           <div class="panel-heading">
-            <h4>Intro Video</h4>
+            <h4>Intro Video</h4> <%= link_to 'Edit', edit_startup_path(@app.slug) %>
           </div>
 
           <iframe width="100%" height="325" src="//www.youtube.com/embed/<%=@app.youtube_id%>?rel=0&modestbranding=1;autohide=1&amp;showinfo=0&amp;controls=0;rel=0" frameborder="0" allowfullscreen></iframe>

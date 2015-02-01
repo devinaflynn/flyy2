@@ -6,7 +6,7 @@ class StartupsController < ApplicationController
   # GET /startups
   # GET /startups.json
   def index
-    @apps = current_user.apps.paginate(page: params[:page], per_page: 2).order(created_at: :desc)
+    @apps = App.all.paginate(page: params[:page], per_page: 2).order(created_at: :desc)
     respond_to do |format|
       format.html
       format.js { render layout: false }
@@ -56,8 +56,10 @@ class StartupsController < ApplicationController
     @app = App.new
   end
 
-  # GET /startups/1/edit
   def edit
+  end
+
+  def add_youtube
     client = YouTubeIt::Client.new(username:ENV["YOUTUBE_LOGIN"], password:ENV["YOUTUBE_PASSWORD"], dev_key: ENV["YOUTUBE_API_KEY"])
     @upload_info = client.upload_token({title:@app.name, description:@app.tagline, category: "Tech", keywords:["flyy",@app.name]}, startup_youtube_callback_url(:startup_id=>@app.slug))
   end
@@ -67,7 +69,7 @@ class StartupsController < ApplicationController
     if @app
       @app.youtube_id=params[:id]
       @app.save
-      redirect_to startup_path(@app.slug)
+      redirect_to startup_detail_path(@app.slug)
     else
       redirect_to root_path
     end
@@ -76,11 +78,12 @@ class StartupsController < ApplicationController
   # POST /startups
   # POST /startups.json
   def create
-    @app = current_user.apps.build(app_params)
+    @app = App.new(app_params)
+    @app.user = current_user
 
     respond_to do |format|
       if @app.save
-        format.html { redirect_to edit_startup_path(@app.slug), notice: 'Now you can upload the video...' }
+        format.html { redirect_to startup_add_youtube_path(@app.slug), notice: 'Now you can upload the video...' }
         format.json { render :show, status: :created, location: @app }
       else
         format.html { render :new }
@@ -94,7 +97,7 @@ class StartupsController < ApplicationController
   def update
     respond_to do |format|
       if @app.update(app_params)
-        format.html { redirect_to @app, notice: 'App was successfully updated.' }
+        format.html { redirect_to startup_detail_path(@app.slug), notice: 'App was successfully updated.' }
         format.json { render :show, status: :ok, location: @app }
       else
         format.html { render :edit }

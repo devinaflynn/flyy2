@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def get_apps
     if user_signed_in?
-      @apps = current_user.apps
+      @user_apps = current_user.apps
     end
   end
 end

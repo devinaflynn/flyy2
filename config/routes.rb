@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   get 'comments/get_comments_by_app' => 'comments#get_comments_by_app'
   resources :comments
 
-
-  get 'startup/:slug', to: 'startups#show', as: 'startup'
+  get 'startup/:slug', to: 'startups#show', as: 'startup_detail'
   resources :startups, except: :show do
     get 'youtube_callback' => 'startups#youtube_callback'
+    get 'add_youtube'
     get "mobile", on: :collection
     get "websites", on: :collection
     get "products", on: :collection
