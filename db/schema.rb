@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116112718) do
+ActiveRecord::Schema.define(version: 20150130224608) do
 
   create_table "apps", force: true do |t|
     t.string   "name"
@@ -76,6 +76,18 @@ ActiveRecord::Schema.define(version: 20150116112718) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "video_updates", force: true do |t|
+    t.string   "title"
+    t.string   "youtube_id"
+    t.integer  "view_count",   default: 0
+    t.boolean  "is_processed", default: false
+    t.integer  "app_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "video_updates", ["app_id"], name: "index_video_updates_on_app_id"
 
   create_table "votes", force: true do |t|
     t.integer  "votable_id"

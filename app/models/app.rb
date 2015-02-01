@@ -4,6 +4,7 @@ class App < ActiveRecord::Base
 	mount_uploader :logo, LogoUploader
 
 	has_many :comments
+	has_many :video_updates
 	belongs_to :user
 	acts_as_votable
 

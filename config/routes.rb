@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     get "products", on: :collection
     get "viewed",   on: :collection
     get "popular",  on: :collection
+    resource :video_update, on: :member do
+      get 'youtube_callback' => 'video_updates#youtube_callback'
+    end
   end
 
   namespace :profile do
