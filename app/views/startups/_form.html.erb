@@ -1,3 +1,4 @@
+ <header id="top" class="header">
 <div class="container3">
   <div class="row">
  
@@ -21,25 +22,25 @@
             <div class="form-group">
               <%= f.label :name, class:"col-md-3 control-label" %>
               <div class="col-md-9">
-                <%= f.text_field :name, class: "form-control" %>
+                <%= f.text_field :name, :placeholder => " Google ", class: "form-control" %> 
               </div>
             </div>
             <div class="form-group">
               <%= f.label :tagline, class:"col-md-3 control-label" %>
               <div class="col-md-9">
-                <%= f.text_field :tagline, class: "form-control" %>
+                <%= f.text_field :tagline, :placeholder => " Search for anything in the world and beyond ", class: "form-control" %>
               </div>
             </div>
             <div class="form-group">
               <%= f.label :founders, class:"col-md-3 control-label" %>
               <div class="col-md-9">
-                <%= f.text_field :founders, class: "form-control" %>
+                <%= f.text_field :founders, :placeholder => " Larry Page and Sergey Brin ", class: "form-control" %>
               </div>
             </div>
             <div class="form-group">
               <%= f.label :website, class:"col-md-3 control-label" %>
               <div class="col-md-9">
-                <%= f.text_field :website, class: "form-control" %>
+                <%= f.text_field :website, :placeholder => " http://google.com", class: "form-control" %>
               </div>
             </div>
 
@@ -70,3 +71,4 @@
     </div>
   </div>
 </div>
+</header>
